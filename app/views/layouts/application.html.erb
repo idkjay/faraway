@@ -19,7 +19,7 @@
         <div class="level-right">
           <p class="level-item">
             <%- if user_signed_in? -%>
-
+              <span>Welcome back, <%= "#{current_user.name}" %>!</span> <hr>
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
             <%- else -%>
               <%= link_to 'Sign Up', new_user_registration_path, :class => "button is-dark is-outlined" %>
@@ -30,13 +30,13 @@
       </nav>
     </div>
   </header>
+  <%- flash.each do |key, value| -%>
+  <div class="flash flash-<%= key %>">
+    <%= value %>
+  </div>
+  <%- end -%>
   <section class="section">
     <div class="container">
-      <%- flash.each do |key, value| -%>
-        <div class="flash flash-<%= key %>">
-        <%= value %>
-        </div>
-      <%- end -%>
       <%= yield %>
     </div>
   </section>
