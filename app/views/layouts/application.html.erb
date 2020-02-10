@@ -18,8 +18,13 @@
         </div>
         <div class="level-right">
           <p class="level-item">
-            <%= link_to("Sign Up", new_user_registration_path, :class => "button is-dark is-outlined") %>
-            <%= link_to("Sign In", new_user_session_path, :class => "button is-dark is-outlined") %>
+            <%- if user_signed_in? -%>
+
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
+            <%- else -%>
+              <%= link_to 'Sign Up', new_user_registration_path, :class => "button is-dark is-outlined" %>
+              <%= link_to 'Sign In', new_user_session_path, :class => "button is-dark is-outlined" %>
+            <%- end -%>
           </p>
         </div>
       </nav>
@@ -27,6 +32,11 @@
   </header>
   <section class="section">
     <div class="container">
+      <%- flash.each do |key, value| -%>
+        <div class="flash flash-<%= key %>">
+        <%= value %>
+        </div>
+      <%- end -%>
       <%= yield %>
     </div>
   </section>
