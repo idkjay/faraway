@@ -2,44 +2,38 @@
 <html>
 <head>
   <title>Faraway</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-  <nav class="top-bar">
-    <h1><a href="/">Faraway</a></h1>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
+  <header class="header">
+    <div class="container">
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <h1><a href="/">Faraway</a></h1>
+          </div>
+        </div>
+        <div class="level-right">
+          <p class="level-item">
+            <%= link_to("Sign Up", new_user_registration_path, :class => "button is-dark is-outlined") %>
+            <%= link_to("Sign In", new_user_session_path, :class => "button is-dark is-outlined") %>
+          </p>
+        </div>
+      </nav>
     </div>
-  <%- end -%>
-
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-  
-  <%- if Rails.env.development? || Rails.env.test? -%> 
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
-    <%- end -%>
-  <%- end -%>
-  <%= javascript_pack_tag 'application' %>
-  
-  <%= yield :extra_footer %>
+  </header>
+  <section class="section">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      Copyright © Faraway. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
