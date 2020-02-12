@@ -40,9 +40,9 @@ const PlannersIndexContainer = (props) => {
     let submitErrors = {}
     const requiredFields = ['title', 'description']
     requiredFields.forEach((field) => {
-      if (newPlanner[field].trim() === "") {
+      if (newPlanner[field].trim() === '') {
         submitErrors = {
-          ...submitErrors, [field]: "is blank"
+          ...submitErrors, [field]: 'is blank'
         }
       }
     })
@@ -63,6 +63,36 @@ const PlannersIndexContainer = (props) => {
       title: '',
       description: ''
     })
+  };
+
+  const addNewPlanner = (formPayload) => {
+    fetch('/api/v1/planners', {
+      credentials: 'same-origin',
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formPayload)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(response => {
+      if (response) {
+        setPlanners([...planners, response])
+      } else {
+        setErrors(response.errors)
+      }
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
 
   const plannerTiles = planners.map(planner => {

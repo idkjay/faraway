@@ -5,22 +5,31 @@ import _ from 'lodash';
 const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, errors }) => {
   return(
     <div>
-      <h3>Make New Planner</h3>
-      <form id="" onSubmit={handleSubmit} >
+      <form id='' onSubmit={handleSubmit} >
         <ErrorList errors={errors}/>
-        <label>
-          Title:
-          <input onChange={handleInputChange} id="title" value={newPlanner.title}/>
-        </label>
 
-        <label>
-          Review:
-          <textarea onChange={handleInputChange} id="description" value={newPlanner.description}/>
-        </label>
+        <div className='field'>
+          <label className='label'>Make New Planner</label>
+          <div className='control'>
+            <input onChange={handleInputChange} id='title' value={newPlanner.title} placeholder='Title'/>
+          </div>
+        </div>
 
-        <input className="button" id="submit" type="submit" />
+        <div className='field'>
+          <label className='label'></label>
+          <div className='control'>
+            <textarea onChange={handleInputChange} id='description' value={newPlanner.description} placeholder='Description'/>
+          </div>
+        </div>
 
-        <input className="button" type="button" onClick={clearForm} value="Clear" />
+        <div className='field is-grouped'>
+          <div className='control'>
+            <button className='button is-link' d='submit' type='submit'>Submit</button>
+          </div>
+          <div className='control'>
+            <button className='button is-link is-light' type='button' onClick={clearForm} value='Clear'>Clear</button>
+          </div>
+        </div>
       </form>
     </div>
   )
