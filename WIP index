@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faraway</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar ">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <h1>Faraway</h1>
+      </a>
+      <div class="navbar-burger burger" data-target="navMenubd-example">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navMenubd-example" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link  is-active" href="/documentation/overview/start/">
+            Itinerary
+          </a>
+          <div class="navbar-dropdown ">
+            <a class="navbar-item " href="/">
+              Make a new one
+            </a>
+            <a class="navbar-item is-active" href="/">
+              View Itineraries
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+
+          <%- if user_signed_in? -%>
+          <span class="navvar-item">Welcome back, <%= "#{current_user.name}" %>!</span> <hr>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
+          <%- else -%>
+          <%= link_to 'Sign Up', new_user_registration_path, :class => "button is-dark is-outlined" %>
+          <%= link_to 'Sign In', new_user_session_path, :class => "button is-dark is-outlined" %>
+          <%- end -%>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="columns is-fullheight">
+    <div class="column is-2 is-sidebar-menu">
+      <aside class="menu">
+        <p class="menu-label">
+          Search for a flight
+        </p>
+        <ul class="menu-list">
+
+        </ul>
+
+        <ul class="menu-list">
+
+          <li>
+            <a class="is-active" href="/">daksldjklj</a>
+            <ul>
+              dsads
+            </ul>
+            <ul>
+              dsad
+            </ul>
+          </li>
+
+        </ul>
+        <p class="menu-label">
+          make something
+        </p>
+        <ul class="menu-list">
+        </ul>
+      </aside>
+    </div>
+    <div class="column is-main-content">
+      <%= yield %>
+
+    </div>
+  </div>
+</body>
+</html>
