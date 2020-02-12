@@ -56,4 +56,46 @@ RSpec.describe Api::V1::PlannersController do
     end
   end
 
+  describe 'POST#create' do
+    context 'when a user is signed in and provides proper planner params' do
+      let!(:new_planner) {{
+        title: 'new planner title',
+        description: 'new planner description',
+        user: user1
+      }}
+
+      it 'adds a new planner to the database' do
+        sign_in user1
+
+        previous_count = Planner.count
+        post:create, params: new_planner, format: :json
+        expect(Planner.count).to eq(previous_count + 1)
+      end
+
+      it 'returns the new review as JSON' do
+        sign_in user1
+
+        post :create, params: new_planner, format: :json
+        response_body = JSON.parse(response.body)
+
+        expect(response_body.length).to eq 4
+        expect(response_body['title']).to eq 'new planner title'
+        expect(response_body['description']).to eq 'new planner description'
+      end
+    end
+
+    context 'when a user submits planners without required params' do
+      let!(:bad_planner) {{
+        title: '',
+        description: '',
+        user: user1
+      }}
+
+      it 'does not add the new planner to the database' do
+        previous_count = Planner.count
+        post :create, params: bad_planner, format: :json
+        expect(Planner.count).to eq(previous_count)
+      end
+    end
+  end
 end
