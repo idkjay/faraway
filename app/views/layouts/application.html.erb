@@ -16,16 +16,21 @@
             <h1><a href="/">Faraway</a></h1>
           </div>
         </div>
-        <div class="level-right">
-          <p class="level-item">
+
+        <div id="navMenubd-example" class="navbar-menu">
+          <div class="navbar-start">
+          </div>
+        </div>
+        <div class="level-right navbar-end">
+          <p class="level-item navbar-item">
             <%- if user_signed_in? -%>
               <span>Welcome back, <%= "#{current_user.name}" %>!</span> <hr>
+              <%# <%= link_to 'Itineraries',  planners_path, :class => "button is-dark is-outlined" %> %>
               <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
             <%- else -%>
               <%= link_to 'Sign Up', new_user_registration_path, :class => "button is-dark is-outlined" %>
               <%= link_to 'Sign In', new_user_session_path, :class => "button is-dark is-outlined" %>
             <%- end -%>
-          </p>
         </div>
       </nav>
     </div>
@@ -38,6 +43,15 @@
   <section class="section">
     <div class="container">
       <%= yield %>
+      <%= javascript_include_tag 'application' %>
+
+      <%- if Rails.env.development? || Rails.env.test? -%>
+        <%= javascript_tag do %>
+          window.railsEnv = '<%= Rails.env %>'
+        <%- end -%>
+      <%- end -%>
+      <%= javascript_pack_tag 'application' %>
+      <%= yield :extra_footer %>
     </div>
   </section>
   <footer class="footer">
