@@ -35,7 +35,6 @@ const FlightsIndexContainer = (props) => {
 
   return(
     <div>
-      <h3>Your PLANNEewqRS</h3>
       {plannerTiles}
     </div>
   )

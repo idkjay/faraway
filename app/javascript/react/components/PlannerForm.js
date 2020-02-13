@@ -4,30 +4,36 @@ import _ from 'lodash';
 
 const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, errors }) => {
   return(
-    <div>
+    <div className='columns'>
       <form id='' onSubmit={handleSubmit} >
         <ErrorList errors={errors}/>
 
-        <div className='field'>
-          <label className='label'>Make New Planner</label>
-          <div className='control'>
-            <input onChange={handleInputChange} id='title' value={newPlanner.title} placeholder='Title'/>
+        <div className="field column">
+  				<span className="help label">Title</span>
+          <div className="control has-icons-left">
+            <input onChange={handleInputChange} id='title' placeholder="Title" type="text" className="input is-dark"  value={newPlanner.title}/>
+            <span class="icon is-small is-left">
+              <i class="fas fa-pen"></i>
+            </span>
           </div>
         </div>
 
-        <div className='field'>
-          <label className='label'></label>
-          <div className='control'>
-            <textarea onChange={handleInputChange} id='description' value={newPlanner.description} placeholder='Description'/>
+        <div className="field column">
+  				<span className="help label">Description</span>
+          <div className='control has-icons-left'>
+            <textarea onChange={handleInputChange} id='description' placeholder="Description" type="text" className="input is-dark" value={newPlanner.description}/>
+            <span class="icon is-small is-left">
+              <i class="fas fa-book"></i>
+            </span>
           </div>
         </div>
 
-        <div className='field is-grouped'>
+        <div className='field actions column is-grouped'>
           <div className='control'>
-            <button className='button is-link' d='submit' type='submit'>Submit</button>
+            <button className='button is-dark is-outlined' id='submit' type='submit'>Submit</button>
           </div>
           <div className='control'>
-            <button className='button is-link is-light' type='button' onClick={clearForm} value='Clear'>Clear</button>
+            <button className='button is-dark is-outlined' type='button' onClick={clearForm} value='Clear'>Clear</button>
           </div>
         </div>
       </form>

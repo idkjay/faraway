@@ -2,62 +2,97 @@
 <html>
 <head>
   <title>Faraway</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <nav class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <h1><a href="/">Faraway</a></h1>
-          </div>
-        </div>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <p class="top-word">FARAWAY</p>
+    </a>
 
-        <div id="navMenubd-example" class="navbar-menu">
-          <div class="navbar-start">
-          </div>
-        </div>
-        <div class="level-right navbar-end">
-          <p class="level-item navbar-item">
-            <%- if user_signed_in? -%>
-              <span>Welcome back, <%= "#{current_user.name}" %>!</span> <hr>
-              <%# <%= link_to 'Itineraries',  planners_path, :class => "button is-dark is-outlined" %> %>
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
-            <%- else -%>
-              <%= link_to 'Sign Up', new_user_registration_path, :class => "button is-dark is-outlined" %>
-              <%= link_to 'Sign In', new_user_session_path, :class => "button is-dark is-outlined" %>
-            <%- end -%>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <%- flash.each do |key, value| -%>
-  <div class="flash flash-<%= key %>">
-    <%= value %>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
-  <%- end -%>
-  <section class="section">
-    <div class="container">
-      <%= yield %>
-      <%= javascript_include_tag 'application' %>
 
-      <%- if Rails.env.development? || Rails.env.test? -%>
-        <%= javascript_tag do %>
-          window.railsEnv = '<%= Rails.env %>'
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        <%- if user_signed_in? -%>
+          <p>Welcome back, <%= current_user.name %>!</p>
+          <%= link_to 'Itineraries',  planners_path, :class => 'button is-dark is-outlined' %>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'button is-dark is-outlined' %>
+        <%- else -%>
+          <%= link_to 'Sign Up', new_user_registration_path, :class => 'button is-dark is-outlined' %>
+          <%= link_to 'Sign In', new_user_session_path, :class => 'button is-dark is-outlined' %>
         <%- end -%>
-      <%- end -%>
-      <%= javascript_pack_tag 'application' %>
-      <%= yield :extra_footer %>
+      </div>
     </div>
-  </section>
-  <footer class="footer">
-    <div class="container">
-      Copyright © Faraway. All rights reserved.
-    </div>
-  </footer>
+  </div>
+</nav>
+
+  <div class='faraway_app'>
+    <section>
+      <div class="container-fluid">
+        <div class="columns is-gapless">
+          <div class="column is-one-quarter searchFormCol">
+            <div class="level brandLevel">
+
+            </div>
+            <div class="is-flex formWrapper column">
+              <form class="searchForm">
+                <div className='field column'>
+                  <div className='control'>
+                    <input className="input is-dark" type="text", name="placeOriginSearch" placeholder="Location" autocomplete="off" />
+                  </div>
+                </div>
+
+                <div className='field column'>
+                  <label for="placeDestinationSearch">To</label>
+                  <div className='control'>
+                    <input className="input is-dark" type="text", name="placeDestinationSearch" placeholder="Destination"  autocomplete="off" />
+                  </div>
+                </div>
+
+                <div class="field column">
+                  <div class="control">
+                    <button type="submit" value="Search" class="button is-primary is-outlined">Search</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="column pageLoadCol">
+            <section class='section'>
+              <div class='container'>
+                <%= yield %>
+                <%- flash.each do |key, value| -%>
+                <div class="flash flash-<%= key %>">
+                  <%= value %>
+                </div>
+                <%- end -%>
+                <%= javascript_include_tag 'application' %>
+
+                <%- if Rails.env.development? || Rails.env.test? -%>
+                  <%= javascript_tag do %>
+                    window.railsEnv = '<%= Rails.env %>'
+                  <%- end -%>
+                <%- end -%>
+                <%= javascript_pack_tag 'application' %>
+                <%= yield :extra_footer %>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
