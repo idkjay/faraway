@@ -4,7 +4,9 @@
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
   <div class="field column">
-    <span class="help label">Email</span>
+    <span>
+      <%= f.label :email, :class => 'help label' %>
+    </span>
     <div class="control has-icons-left">
       <%= f.email_field :email, autofocus: true, :class => 'input is-dark', :type => 'text', placeholder:'Email' %>
       <span class="icon is-small is-left">
