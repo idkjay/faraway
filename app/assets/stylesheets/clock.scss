@@ -8,27 +8,27 @@
     width: 300px;
     margin: 0 auto;
     padding: 30px;
-    border: 1px solid #333;
+    border: 1px solid #fff;
     color: #fff;
 }
 
 #Date {
-    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-family: "BebasNeueRegular", Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
 }
 
-ul {
+.clock-ul {
     width: 239px;
     list-style: none;
     text-align: center;
 }
 
-ul li {
+.clock-li {
     display: inline;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
-    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-family: "BebasNeueRegular", Arial, Helvetica, sans-serif;
 }
 
 #point {

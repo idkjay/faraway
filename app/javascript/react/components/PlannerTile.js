@@ -12,8 +12,8 @@ const PlannerTile = (props) => {
     <div>
       <div className="card">
         <header className="card-header">
-          <p className="card-header-title">
-            <h2 id='title'>{title}</h2>
+          <p className="card-header-title" id="title">
+            {title}
           </p>
         </header>
         <div className="card-content">

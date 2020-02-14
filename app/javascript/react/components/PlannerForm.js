@@ -3,11 +3,10 @@ import ErrorList from './ErrorList';
 import _ from 'lodash';
 
 const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, errors }) => {
-  
+
   return(
     <div className='columns'>
       <form id='planner-form' onSubmit={handleSubmit} >
-        <ErrorList errors={errors}/>
 
         <div className="field column">
   				<span className="help label">Title</span>
@@ -37,7 +36,9 @@ const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, e
             <button className='button is-dark is-outlined' type='button' onClick={clearForm} value='Clear'>Clear</button>
           </div>
         </div>
+        <ErrorList errors={errors}/>
       </form>
+
     </div>
   )
 };

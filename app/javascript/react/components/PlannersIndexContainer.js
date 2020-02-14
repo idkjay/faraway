@@ -168,7 +168,6 @@ const PlannersIndexContainer = (props) => {
 
   return(
     <div>
-      <h3>Your PLANNERS</h3>
         <PlannerForm
           handleInputChange={handleInputChange}
           handleSubmit={handleSubmit}
@@ -176,6 +175,7 @@ const PlannersIndexContainer = (props) => {
           errors={errors}
           clearForm={clearForm}
         />
+      <h3 className="top">Your Planners</h3>
       {plannerTiles}
     </div>
   )

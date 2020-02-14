@@ -22,7 +22,7 @@ describe("PlannerTile", () => {
     )
   });
 
-  it('should render an h2 element containing the title', () => {
+  it('should render an p element containing the title', () => {
     expect(wrapper.find('#title').text()).toBe('South Korea trip')
   });
 
