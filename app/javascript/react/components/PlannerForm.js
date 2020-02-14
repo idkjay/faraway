@@ -28,14 +28,11 @@ const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, e
           </div>
         </div>
 
-        <div className='field actions column is-grouped'>
-          <div className='control'>
-            <button className='button is-dark is-outlined' id='submit' type='submit'>Submit</button>
-          </div>
-          <div className='control'>
-            <button className='button is-dark is-outlined' type='button' onClick={clearForm} value='Clear'>Clear</button>
-          </div>
+        <div className="buttons submit-clear">
+          <button className="button is-dark is-outlined" type="submit">Submit</button>
+          <button className="button is-dark is-outlined" type="button" onClick={clearForm}>Clear</button>
         </div>
+
         <ErrorList errors={errors}/>
       </form>
 

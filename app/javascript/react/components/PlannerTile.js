@@ -2,7 +2,7 @@ import React from 'react';
 import EditPlannerTile from './EditPlannerTile';
 
 const PlannerTile = (props) => {
-  const { id, title, description, created, updatePlanner, deletePlanner } = props
+  const { id, title, description, created, updatePlanner, deletePlanner } = props]
 
   const handleDelete = () => {
     deletePlanner(id)
@@ -23,9 +23,8 @@ const PlannerTile = (props) => {
         </div>
         <time>{created}</time>
         <footer className="card-footer">
-          <a onClick={updatePlanner} className="card-footer-item">Edit</a>
-
-          <a onClick={handleDelete} className="card-footer-item">Delete</a>
+          <i onClick={updatePlanner} className="card-footer-item far fa-edit"></i>
+          <i onClick={handleDelete} className="card-footer-item far fa-trash-alt"></i>
         </footer>
       </div>
       <br/>

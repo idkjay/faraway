@@ -175,6 +175,7 @@ const PlannersIndexContainer = (props) => {
           errors={errors}
           clearForm={clearForm}
         />
+      <br/>
       <h3 className="top">Your Planners</h3>
       {plannerTiles}
     </div>

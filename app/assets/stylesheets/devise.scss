@@ -22,4 +22,18 @@
 
 .search {
   margin-top: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-clear {
+  margin-top: 2px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.search-button {
+  width: 300px;
 }
