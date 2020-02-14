@@ -1,6 +1,7 @@
 .top-word {
-  letter-spacing: 38px;
+  letter-spacing: 45px;
   font-weight: bold;
+  text-shadow: 1px 1px 1px #00D1B1;
 }
 
 .section {
@@ -33,9 +34,16 @@
 }
 
 .pageLoadCol {
-  // align-items: center;
   justify-content: center;
   display: flex;
   min-height: 300px;
   text-align: center;
+}
+
+#planner-form {
+  width: 1000px;
+}
+
+.is-grouped {
+  flex-direction:row;
 }

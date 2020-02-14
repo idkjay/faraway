@@ -36,6 +36,63 @@ const PlannersIndexContainer = (props) => {
     })
   };
 
+  const updatePlanner = (editedPlanner) => {
+    fetch(`/api/v1/planners/${editedPlanner.id}`, {
+      credentials: 'same-origin',
+      method: "PATCH",
+      body: JSON.stringify(editedPlanner),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((response) => {
+      setPlanners(response)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  };
+
+  const deletePlanner = (id) => {
+    fetch(`/api/v1/planners/${id}`, {
+      credentials: 'same-origin',
+      method: "DELETE",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((response) => {
+      setPlanners(response)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  };
+
+
+
   const validSubmission = () => {
     let submitErrors = {}
     const requiredFields = ['title', 'description']
@@ -99,15 +156,18 @@ const PlannersIndexContainer = (props) => {
     return(
       <PlannerTile
         key={planner.id}
+        id={planner.id}
         title={planner.title}
         description={planner.description}
+        updatePlanner={updatePlanner}
+        deletePlanner={deletePlanner}
+        created={planner.created_at}
       />
     )
   });
 
   return(
     <div>
-      <h3>Your PLANNERS</h3>
         <PlannerForm
           handleInputChange={handleInputChange}
           handleSubmit={handleSubmit}
@@ -115,6 +175,7 @@ const PlannersIndexContainer = (props) => {
           errors={errors}
           clearForm={clearForm}
         />
+      <h3 className="top">Your Planners</h3>
       {plannerTiles}
     </div>
   )

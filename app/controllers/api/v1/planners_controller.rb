@@ -22,6 +22,21 @@ class Api::V1::PlannersController < ApplicationController
     end
   end
 
+  def update
+    planner = Planner.find(params["id"])
+    if planner.update_attributes(planner_params)
+      render json: current_user.planners
+    else
+      render json: {message: "Unsuccessful update" }
+    end
+  end
+
+  def destroy
+    planner = Planner.find(params["id"])
+    planner.destroy
+    render json: current_user.planners
+  end
+
   private
 
   def planner_params
