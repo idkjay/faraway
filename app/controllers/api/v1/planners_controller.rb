@@ -3,8 +3,10 @@ class Api::V1::PlannersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
+
     planners = current_user.planners
     render json: planners
+
   end
 
   def create
@@ -20,6 +22,21 @@ class Api::V1::PlannersController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def update
+    planner = Planner.find(params['id'])
+    if planner.update_attributes(planner_params)
+      render json: current_user.planners
+    else
+      render json: {message: 'Unsuccessful update' }
+    end
+  end
+
+  def destroy
+    planner = Planner.find(params['id'])
+    planner.destroy
+    render json: current_user.planners
   end
 
   private
