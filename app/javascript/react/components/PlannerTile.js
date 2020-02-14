@@ -2,7 +2,7 @@ import React from 'react';
 import EditPlannerTile from './EditPlannerTile';
 
 const PlannerTile = (props) => {
-  const { id, title, description, created, updatePlanner, deletePlanner } = props]
+  const { id, title, description, created, updatePlanner, deletePlanner } = props
 
   const handleDelete = () => {
     deletePlanner(id)
