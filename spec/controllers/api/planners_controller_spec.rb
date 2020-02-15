@@ -68,7 +68,7 @@ RSpec.describe Api::V1::PlannersController do
         sign_in user1
 
         previous_count = Planner.count
-        post:create, params: new_planner, format: :json
+        post :create, params: new_planner, format: :json
         expect(Planner.count).to eq(previous_count + 1)
       end
 
@@ -93,8 +93,21 @@ RSpec.describe Api::V1::PlannersController do
 
       it 'does not add the new planner to the database' do
         previous_count = Planner.count
+
         post :create, params: bad_planner, format: :json
         expect(Planner.count).to eq(previous_count)
+      end
+    end
+  end
+
+  describe 'DELETE#destroy' do
+    context 'when a user deletes a planner' do
+      it 'planner is removed from the database' do
+        sign_in user1
+        previous_count = Planner.count
+
+        delete :destroy, params: { planner: planner1, id: planner1.id}, format: :json
+        expect(Planner.count).to eq(previous_count - 1)
       end
     end
   end

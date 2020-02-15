@@ -9,7 +9,7 @@
 }
 
 .is-one-quarter {
-  background-color: gray;
+  background-color: #808080;
   flex: none;
   width: 25%;
 }
@@ -40,10 +40,13 @@
   text-align: center;
 }
 
-#planner-form {
-  width: 1000px;
+nav {
+  border-style: solid;
+  border-color: #808080;
+  border-width: 0px 0px 2px 0px;
+
 }
 
-.is-grouped {
-  flex-direction:row;
+#planner-form {
+  width: 1000px;
 }
