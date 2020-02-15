@@ -91,8 +91,6 @@ const PlannersIndexContainer = (props) => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   };
 
-
-
   const validSubmission = () => {
     let submitErrors = {}
     const requiredFields = ['title', 'description']
@@ -161,7 +159,6 @@ const PlannersIndexContainer = (props) => {
         description={planner.description}
         updatePlanner={updatePlanner}
         deletePlanner={deletePlanner}
-        created={planner.created_at}
       />
     )
   });
