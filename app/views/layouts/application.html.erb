@@ -43,9 +43,8 @@
         <div class="columns is-gapless">
           <div class="column is-one-quarter searchFormCol">
 
-
             <div class="level brandLevel">
-
+              dsafsd
             </div>
 
             <div class="is-flex formWrapper column">
@@ -65,13 +64,12 @@
               <div class="column devise">
 
                 <form class="searchForm">
-
                   <div>
                     <span class="help label">
                       Location
                     </span>
                     <div class="control has-icons-left">
-                      <input class="input is-dark" type="text" name="placeOriginSearch" placeholder="Location" autocomplete="off" >
+                      <input class="input is-dark" type="text" name="placeOriginSearch" placeholder="Location" autocomplete="off" />
                       <span class="icon is-small is-left">
                         <i class="fas fa-home"></i>
                       </span>
@@ -83,7 +81,7 @@
                       Destination
                     </span>
                     <div class="control has-icons-left">
-                      <input class="input is-dark" type="text" name="placeDestinationSearch" placeholder="Destination" autocomplete="off" >
+                      <input class="input is-dark" type="text" name="placeDestinationSearch" id="placeDestinationSearch" placeholder="Destination" autocomplete="off" >
                       <span class="icon is-small is-left">
                         <i class="fas fa-map-marker"></i>
                       </span>
@@ -95,7 +93,7 @@
                       Start Date
                     </span>
                     <div class="control has-icons-left">
-                      <input class="input is-dark"type="date">
+                      <input class="input is-dark"type="date" />
                       <span class="icon is-small is-left">
                         <i class="fas fa-plane-departure"></i>
                       </span>
@@ -107,7 +105,7 @@
                       End Date
                     </span>
                     <div class="control has-icons-left">
-                      <input class="input is-dark"type="date">
+                      <input class="input is-dark"type="date" />
                       <span class="icon is-small is-left">
                         <i class="fas fa-plane-arrival"></i>
                       </span>
@@ -115,12 +113,11 @@
                   </div>
 
                   <div class="search control">
-
-                    <button type="submit" value="Search" class="search-button button is-primary">Search</button>
-
+                    <button type="submit" value="Search" class="search-button button is-primary" onClick={searchPhotos}>Search</button>
                   </div>
 
                 </form>
+
               </div>
             </div>
             <p class="creator">By Jordan Chu</p>
@@ -132,7 +129,7 @@
           </div>
 
           <div class="column pageLoadCol">
-            
+
             <section class='section'>
               <div class='container'>
                 <%= yield %>

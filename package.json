@@ -25,7 +25,8 @@
     "react": "~16.8.0",
     "react-dom": "~16.8.0",
     "react-router-dom": "5.0.0",
-    "redbox-react": "1.6.0"
+    "redbox-react": "1.6.0",
+    "unsplash-js": "^6.0.0"
   },
   "devDependencies": {
     "babel-jest": "^24.9.0",

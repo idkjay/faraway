@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # root 'welcome#index'
   root 'static_pages#index'
 
   get '/', to: 'static_pages#index'
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :planners, only: [:index, :create, :destroy, :update]
+      post '/', to: 'images#search_destination'
     end
   end
 end
