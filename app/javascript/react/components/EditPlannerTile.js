@@ -20,8 +20,8 @@ const EditPlannerTile = (props) => {
   }
 
   return(
-    <div>
-      <form className="padding" onSubmit={handleEditSubmit}>
+    <div className="modal">
+      <form className="" onSubmit={handleEditSubmit}>
         <div className="edit-planner">
           Edit your planner
         </div>

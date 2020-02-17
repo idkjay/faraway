@@ -111,4 +111,23 @@ RSpec.describe Api::V1::PlannersController do
       end
     end
   end
+
+  describe "PATCH#update" do
+    context 'when a user updates a planner' do
+      it "updated planner is saved to the database" do
+        sign_in user1
+        planner_params = {
+          title: "Edited title",
+          description: "Edited description",
+          user_id: user1.id,
+          id: planner1.id
+        }
+
+        patch :update, params: planner_params, format: :json
+        updated_planner = Planner.find(planner1.id)
+        expect(updated_planner.title).to eq "Edited title"
+        expect(updated_planner.description).to eq "Edited description"
+      end
+    end
+  end
 end

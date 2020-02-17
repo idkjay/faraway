@@ -12,6 +12,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require "unsplash"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -30,4 +31,11 @@ module Faraway
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
+end
+
+Unsplash.configure do |config|
+  config.application_access_key = "#{ENV["UNSPLASH_KEY"]}"
+  config.application_secret = "#{ENV["UNSPLASH_SECRET_KEY"]}"
+  config.application_redirect_uri = "https://your-application.com/oauth/callback"
+  config.utm_source = "alices_terrific_client_app"
 end
