@@ -1,12 +1,12 @@
-import React from 'react'
-import Enzyme, { mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import PlannerTile from './PlannerTile'
-import { BrowserRouter } from 'react-router-dom'
-Enzyme.configure({ adapter: new Adapter() })
+import React from 'react';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import PlannerTile from './PlannerTile';
+import { BrowserRouter } from 'react-router-dom';
+Enzyme.configure({ adapter: new Adapter() });
 
 describe("PlannerTile", () => {
-  let wrapper
+  let wrapper;
 
   beforeEach(() => {
     wrapper = mount(
@@ -16,17 +16,16 @@ describe("PlannerTile", () => {
           id={1}
           title='South Korea trip'
           description='Going to Gangnam!'
-          name='Ben'
         />
       </BrowserRouter>
     )
   });
 
   it('should render an p element containing the title', () => {
-    expect(wrapper.find('#title').text()).toBe('South Korea trip')
+    expect(wrapper.find('#title').first().text()).toBe('South Korea trip')
   });
 
   it('should render an p element containing the description', () => {
-    expect(wrapper.find('#description').text()).toBe('Going to Gangnam!')
+    expect(wrapper.find('#description').first().text()).toBe('Going to Gangnam!')
   });
 });

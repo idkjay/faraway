@@ -10,3 +10,11 @@
   border-style: groove;
   border-radius: 8px;
 }
+
+#element-toggle {
+  display: none;
+}
+
+#element-toggle:checked ~ .modal {
+  display: flex;
+}
