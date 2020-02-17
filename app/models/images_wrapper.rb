@@ -8,5 +8,6 @@ class ImagesWrapper
   end
 
   def self.retrieve_image()
+  end
 
 end
