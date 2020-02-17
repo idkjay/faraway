@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
-import EditPlannerTile from './EditPlannerTile';
 
 const PlannerTile = (props) => {
   const { id, title, description, updatePlanner, deletePlanner } = props
-
-  const handleDelete = () => {
-    deletePlanner(id)
-  }
-
   const [ editedPlanner, setEditedPlanner ] = useState({
     id: id,
     title: title,
     description: description
   })
+
+  const handleDelete = () => {
+    deletePlanner(id)
+  }
 
   const handleEditSubmit = (event) => {
     event.preventDefault()
