@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :planners, only: [:index, :create, :destroy, :update]
-      post '/', to: 'images#search_destination'
+      # post '/', to: 'images#search_destination'
+      resources :flights, only: [:index]
     end
   end
 end
