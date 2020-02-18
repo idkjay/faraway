@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_003155) do
   create_table "airports", force: :cascade do |t|
     t.string "name", null: false
     t.string "code", null: false
+    t.string "city", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
