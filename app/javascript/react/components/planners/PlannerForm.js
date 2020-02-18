@@ -33,7 +33,9 @@ const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, e
           <button className="button is-dark is-outlined" type="button" onClick={clearForm}>Clear</button>
         </div>
 
-        <ErrorList errors={errors}/>
+        <div className="flashy">
+          <ErrorList errors={errors}/>
+        </div>
       </form>
 
     </div>

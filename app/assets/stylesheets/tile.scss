@@ -9,6 +9,8 @@
 .card {
   border-style: groove;
   border-radius: 8px;
+  width: 75vw;
+  margin: auto;
 }
 
 #element-toggle {
@@ -17,4 +19,28 @@
 
 #element-toggle:checked ~ .modal {
   display: flex;
+}
+
+.plannertop {
+  font-size: 30px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.fab {
+  padding: 3px;
+}
+
+.flashy {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flashmsg {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

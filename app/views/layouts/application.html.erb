@@ -21,138 +21,40 @@
     </a>
   </div>
 
-  <div class="navbar-end">
-    <div class="navbar-item">
-      <div class="buttons">
-        <%- if user_signed_in? -%>
-          <p class="navbar-item">Welcome back, <%= current_user.name %>!</p>
-          <%= link_to 'Planners',  planners_path, :class => 'button is-dark is-outlined' %>
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'button is-dark is-outlined' %>
-        <%- else -%>
-          <%= link_to 'Sign Up', new_user_registration_path, :class => 'button is-dark is-outlined' %>
-          <%= link_to 'Sign In', new_user_session_path, :class => 'button is-dark is-outlined' %>
-        <%- end -%>
-      </div>
-    </div>
-  </div>
-</nav>
-
-  <div class='faraway_app'>
-    <section>
-      <div class="container-fluid">
-        <div class="columns is-gapless">
-          <div class="column is-one-quarter searchFormCol">
-
-            <div class="level brandLevel">
-              dsafsd
-            </div>
-
-            <div class="is-flex formWrapper column">
-
-              <div class="clock">
-                <div id="Date"></div>
-                  <ul class="clock-ul">
-                      <li class="clock-li" id="hours"></li>
-                      <li class="clock-li" id="point">:</li>
-                      <li class="clock-li" id="min"></li>
-                      <li class="clock-li" id="point">:</li>
-                      <li class="clock-li" id="sec"></li>
-                  </ul>
-                </div>
-                <br>
-
-              <div class="column devise">
-                <form class="searchForm" action="/api/v1/flights_search" method="post">
-
-                  <div>
-                    <span class="help label">
-                      Location
-                    </span>
-                    <div class="control has-icons-left">
-                      <input class="input is-dark" type="text" name="flyFrom" placeholder="Location" autocomplete="on" />
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-home"></i>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <span class="help label">
-                      Destination
-                    </span>
-                    <div class="control has-icons-left">
-                      <input class="input is-dark" type="text" name="to" placeholder="Destination" autocomplete="on" >
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-map-marker"></i>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <span class="help label">
-                      Start Date
-                    </span>
-                    <div class="control has-icons-left">
-                      <input class="input is-dark" type="date" name="date_from" />
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-plane-departure"></i>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <span class="help label">
-                      End Date
-                    </span>
-                    <div class="control has-icons-left">
-                      <input class="input is-dark" type="date" name="date_to" />
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-plane-arrival"></i>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="search control">
-                    <button type="submit" value="Search" class="search-button button is-primary">Search</button>
-                  </div>
-
-                </form>
-
-              </div>
-            </div>
-            <p class="creator">By Jordan Chu</p>
-            <div class="devise">
-              <a href="https://www.linkedin.com/in/jordanchu1995"><i class="fab fa-linkedin fa-2x"></i></a>
-              <a href="https://github.com/idkjay"><i class="fab fa-github-square fa-2x"></i></a>
-              <a href="https://twitter.com/idkjay"><i class="fab fa-twitter-square fa-2x"></i></a>
-            </div>
-          </div>
-
-          <div class="column pageLoadCol">
-
-            <section class='section'>
-              <div class='container'>
-                <%= yield %>
-                <%- flash.each do |key, value| -%>
-                <div class="flash flash-<%= key %>">
-                  <%= value %>
-                </div>
-                <%- end -%>
-                <%= javascript_include_tag 'application' %>
-
-                <%- if Rails.env.development? || Rails.env.test? -%>
-                  <%= javascript_tag do %>
-                    window.railsEnv = '<%= Rails.env %>'
-                  <%- end -%>
-                <%- end -%>
-                <%= javascript_pack_tag 'application' %>
-                <%= yield :extra_footer %>
-              </div>
-            </section>
-          </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <%- if user_signed_in? -%>
+            <p class="navbar-item">Welcome back, <%= current_user.name %>!</p>
+            <%= link_to 'Planners',  planners_path, :class => 'button is-dark is-outlined' %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'button is-dark is-outlined' %>
+          <%- else -%>
+            <%= link_to 'Sign Up', new_user_registration_path, :class => 'button is-dark is-outlined' %>
+            <%= link_to 'Sign In', new_user_session_path, :class => 'button is-dark is-outlined' %>
+          <%- end -%>
         </div>
       </div>
-    </section>
+    </div>
+  </nav>
+
+  <%= yield %>
+  <div class="flashmsg">
+    <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
+    <%- end -%>
   </div>
+
+  <%= javascript_include_tag 'application' %>
+
+  <%- if Rails.env.development? || Rails.env.test? -%>
+    <%= javascript_tag do %>
+      window.railsEnv = '<%= Rails.env %>'
+    <%- end -%>
+  <%- end -%>
+  <%= javascript_pack_tag 'application' %>
+  <%= yield :extra_footer %>
+
 </body>
 </html>

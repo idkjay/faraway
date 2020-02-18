@@ -25,13 +25,13 @@ class Api::V1::FlightsController < ApplicationController
     parsed_response.each do |flight|
 
       flight_object = {
-        origin_code: flight["flyFrom"],
-        origin_city: flight["cityFrom"],
-        origin_country: flight["countryFrom"]["code"],
+        originCode: flight["flyFrom"],
+        originCity: flight["cityFrom"],
+        originCountry: flight["countryFrom"]["code"],
 
-        destination_code: flight["flyTo"],
-        destination_city: flight["cityTo"],
-        destination_country: flight["countryTo"]["code"],
+        destinationCode: flight["flyTo"],
+        destinationCity: flight["cityTo"],
+        destinationCountry: flight["countryTo"]["code"],
 
         price: flight["conversion"]["USD"],
         link: flight["deep_link"]

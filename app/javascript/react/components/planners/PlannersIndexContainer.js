@@ -165,15 +165,15 @@ const PlannersIndexContainer = (props) => {
 
   return(
     <div>
-        <PlannerForm
-          handleInputChange={handleInputChange}
-          handleSubmit={handleSubmit}
-          newPlanner={newPlanner}
-          errors={errors}
-          clearForm={clearForm}
-        />
+      <PlannerForm
+        handleInputChange={handleInputChange}
+        handleSubmit={handleSubmit}
+        newPlanner={newPlanner}
+        errors={errors}
+        clearForm={clearForm}
+      />
       <br/>
-      <h3 className="top">Your Planners</h3>
+      <h3 className="plannertop">Your Planners</h3>
       {plannerTiles}
     </div>
   )

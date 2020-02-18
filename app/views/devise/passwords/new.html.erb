@@ -1,6 +1,6 @@
-<h2 class="top">Forgot your password?</h2>
 
-<div class="columns devise">
+<div class="columns deviseform">
+  <h2 class="top">Forgot your password?</h2>
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
   <div class="field column">
@@ -23,7 +23,7 @@
 </div>
 
 <div class="columns">
-  <div class="column">
+  <div class="column flashy">
     <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 </div>
