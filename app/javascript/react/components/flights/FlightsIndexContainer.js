@@ -59,6 +59,8 @@ const FlightsIndexContainer = (props) => {
 
             <div className="column pageLoadCol">
 
+
+
               <section className='section'>
                 <div className='container'>
                   {flightsMap}

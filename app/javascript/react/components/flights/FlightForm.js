@@ -11,7 +11,7 @@ const FlightForm = (props) => {
   const handleInput = (event) => {
     let key = event.currentTarget.name
     let value = event.currentTarget.value
-    setSeatch({
+    setSearch({
       ...search,
       [key]: value
     })
@@ -19,18 +19,53 @@ const FlightForm = (props) => {
 
   const handleSubmit = (event) => {
 
+    event.preventDefault()
+    let body = new FormData()
+    body.append("search[flyFrom]", search.flyFrom)
+    body.append("search[to]", search.to)
+    body.append("search[dateFrom]", search.dateFrom)
+    body.append("search[dateTo]", search.dateTo)
+    fetch('/api/v1/flights_search', {
+      method: 'POST',
+      body: body,
+      credentials: 'same-origin',
+      headers: {
+      'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if(response.ok) {
+        return response.json()
+      } else {
+        setSearch({
+          flyFrom: "",
+          to: "",
+          dateFrom: "",
+          dateTo: ""
+        })
+        throw new Error(response.status + ": " + response.statusText);
+      }
+    })
+    .then(body => {
+      props.searchResults(body)
+    })
+    .catch(error => console.error("Error searching show: " + error.message))
   }
 
-
   return(
-    <form onSubmit={handleSubmit} action="/api/v1/flights_search" method="post">
-
+    <form onSubmit={handleSubmit} autoComplete="off">
       <div>
-        <span className="help label">
+        <label className="help label" htmlFor="flyFrom">
           Location
-        </span>
+        </label>
         <div className="control has-icons-left">
-          <input className="input is-dark" type="text" name="flyFrom" placeholder="Location" />
+          <input
+            className="input is-dark"
+            type="text"
+            name="flyFrom"
+            placeholder="City name, Ex: Boston"
+            onChange={handleInput}
+          />
           <span className="icon is-small is-left">
             <i className="fas fa-home"></i>
           </span>
@@ -38,11 +73,17 @@ const FlightForm = (props) => {
       </div>
 
       <div>
-        <span className="help label">
+        <label className="help label" htmlFor="to">
           Destination
-        </span>
+        </label>
         <div className="control has-icons-left">
-          <input className="input is-dark" type="text" name="to" placeholder="Destination" />
+          <input
+            className="input is-dark"
+            type="text"
+            name="to"
+            placeholder="City name, Ex: Orlando"
+            onChange={handleInput}
+          />
           <span className="icon is-small is-left">
             <i className="fas fa-map-marker"></i>
           </span>
@@ -50,11 +91,16 @@ const FlightForm = (props) => {
       </div>
 
       <div>
-        <span className="help label">
+        <label className="help label" htmlFor="dateFrom">
           Start Date
-        </span>
+        </label>
         <div className="control has-icons-left">
-          <input className="input is-dark" type="date" name="date_from" />
+          <input
+            className="input is-dark"
+            type="date"
+            name="dateFrom"
+            onChange={handleInput}
+          />
           <span className="icon is-small is-left">
             <i className="fas fa-plane-departure"></i>
           </span>
@@ -62,11 +108,16 @@ const FlightForm = (props) => {
       </div>
 
       <div>
-        <span className="help label">
+        <label className="help label" htmlFor="dateTo">
           End Date
-        </span>
+        </label>
         <div className="control has-icons-left">
-          <input className="input is-dark" type="date" name="date_to" />
+          <input
+            className="input is-dark"
+            type="date"
+            name="dateTo"
+            onChange={handleInput}
+          />
           <span className="icon is-small is-left">
             <i className="fas fa-plane-arrival"></i>
           </span>

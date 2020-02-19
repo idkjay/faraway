@@ -1,7 +1,8 @@
 .top-word {
-  letter-spacing: 45px;
+  letter-spacing: 70px;
   font-weight: bold;
   text-shadow: 1px 1px 1px #00D1B1;
+  font-size: 30px;
 }
 
 .section {
@@ -50,4 +51,10 @@ nav {
   width: 1000px;
   margin: auto;
   margin-top: 200px;
+}
+
+.container {
+  display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+	grid-gap: 1em;
 }
