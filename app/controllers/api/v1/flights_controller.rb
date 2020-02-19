@@ -1,8 +1,6 @@
 class Api::V1::FlightsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
-  include HTTParty
-
   def index
   end
 
@@ -22,15 +20,6 @@ class Api::V1::FlightsController < ApplicationController
     response = HTTParty.get(url)
 
     parsed_response = JSON.parse(response.body)["data"]
-
-    # destinationPicture = params["search"]["to"]
-    # url = "https://api.unsplash.com/search/photos?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{destinationPicture}"
-    # response_img = HTTParty.get(url)
-    # parsed = JSON.parse(response_img.body)
-    #
-    # img_object = {
-    #   img: parsed["results"][0]["urls"]["regular"]
-    # }
 
     flights_array = []
     parsed_response.each do |flight|
@@ -55,7 +44,6 @@ class Api::V1::FlightsController < ApplicationController
       }
 
       flights_array << flight_object
-      # flights_array << img_object
     end
 
     render json: flights_array
