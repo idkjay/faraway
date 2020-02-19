@@ -8,13 +8,13 @@ const FlightTile = ({ flightData }) => {
       <div className="card holder">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img src={img} alt="Placeholder image"/>
+            <img src={img} id="img"/>
           </figure>
         </div>
         <div className="card-content">
           <div className="media">
             <div className="media-content">
-              <p className="title is-4">{originCode} - {destinationCode}</p>
+              <p className="title is-4" id="trip">{originCode} - {destinationCode}</p>
               <a className="button is-primary price" href={link}>${price}</a>
             </div>
           </div>
