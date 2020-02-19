@@ -1,7 +1,17 @@
 .devise {
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
+  justify-content: center;
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
+
+.deviseform {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 300px;
 }
 
 .form {
@@ -11,13 +21,12 @@
   padding-top: 30px;
 }
 
-.shared {
-  margin-bottom: 15px;
-}
-
 .top {
   font-size: 30px;
-  margin-bottom: 20px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 .search {
