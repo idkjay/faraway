@@ -1,8 +1,0 @@
-<ul>
-  <%= render @airports %>
-</ul>
-
-<%= form_tag airports_path, method: :get do %>
-  <%= text_field_tag 'term', params[:term], placeholder: "Enter airport's name, city, or code" %>
-  <%= submit_tag 'Search!' %>
-<% end %>
