@@ -174,6 +174,7 @@ const PlannersIndexContainer = (props) => {
       />
       <br/>
       <h3 className="plannertop">Your Planners</h3>
+      <hr/>
       {plannerTiles}
     </div>
   )
