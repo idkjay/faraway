@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 
 const PlannerTile = (props) => {
   const { id, title, description, updatePlanner, deletePlanner } = props
@@ -35,7 +35,7 @@ const PlannerTile = (props) => {
 
         <div className="card-content">
           <div className="content">
-            <p id='description'>{description}</p>
+            <p id="description">{description}</p>
           </div>
         </div>
 

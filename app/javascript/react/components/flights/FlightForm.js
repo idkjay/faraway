@@ -25,12 +25,12 @@ const FlightForm = (props) => {
     body.append("search[to]", search.to)
     body.append("search[dateFrom]", search.dateFrom)
     body.append("search[dateTo]", search.dateTo)
-    fetch('/api/v1/flights_search', {
-      method: 'POST',
+    fetch("/api/v1/flights_search", {
+      method: "POST",
       body: body,
-      credentials: 'same-origin',
+      credentials: "same-origin",
       headers: {
-      'Accept': 'application/json'
+      "Accept": "application/json"
       }
     })
     .then(response => {

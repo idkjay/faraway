@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Faraway</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <%= stylesheet_link_tag "application", media: "all" %>
   <link rel="shortcut icon" href="#"/>
   <%= csrf_meta_tags %>
 </head>
@@ -27,11 +27,11 @@
         <div class="buttons">
           <%- if user_signed_in? -%>
             <p class="navbar-item">Welcome back, <%= current_user.name %>!</p>
-            <%= link_to 'Planners',  planners_path, :class => 'button is-dark is-outlined' %>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :class => 'button is-dark is-outlined' %>
+            <%= link_to "Planners",  planners_path, :class => "button is-dark is-outlined" %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "button is-dark is-outlined" %>
           <%- else -%>
-            <%= link_to 'Sign Up', new_user_registration_path, :class => 'button is-dark is-outlined' %>
-            <%= link_to 'Sign In', new_user_session_path, :class => 'button is-dark is-outlined' %>
+            <%= link_to "Sign Up", new_user_registration_path, :class => "button is-dark is-outlined" %>
+            <%= link_to "Sign In", new_user_session_path, :class => "button is-dark is-outlined" %>
           <%- end -%>
         </div>
       </div>
@@ -47,14 +47,14 @@
     <%- end -%>
   </div>
 
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "application" %>
 
   <%- if Rails.env.development? || Rails.env.test? -%>
     <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
+      window.railsEnv = "<%= Rails.env %>"
     <%- end -%>
   <%- end -%>
-  <%= javascript_pack_tag 'application' %>
+  <%= javascript_pack_tag "application" %>
   <%= yield :extra_footer %>
 
 </body>
