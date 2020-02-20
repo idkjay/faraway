@@ -46,7 +46,7 @@ const PlannerTile = (props) => {
             <div className="modal-background"></div>
             <div className="modal-content">
               <div className="card">
-                <form className="" onSubmit={handleEditSubmit}>
+                <form className="planner_edit_form" onSubmit={handleEditSubmit}>
 
                   <header className="card-header">
                     <div className="card-header-title" id="title">
