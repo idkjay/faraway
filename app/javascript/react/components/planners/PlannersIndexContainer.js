@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import _ from 'lodash';
-import PlannerTile from './PlannerTile';
-import PlannerForm from './PlannerForm';
+import React, { useState, useEffect } from "react";
+import _ from "lodash";
+import PlannerTile from "./PlannerTile";
+import PlannerForm from "./PlannerForm";
 
 const PlannersIndexContainer = (props) => {
   const [ planners, setPlanners ] = useState([])
   const [ newPlanner, setNewPlanner ] = useState({
-    title: '',
-    description: ''
+    title: "",
+    description: ""
   })
-  const [ errors, setErrors ] = useState('')
+  const [ errors, setErrors ] = useState("")
 
   useEffect(() => {
-    fetch('/api/v1/planners')
+    fetch("/api/v1/planners")
     .then(response => {
       if (response.ok) {
         return response
@@ -38,12 +38,12 @@ const PlannersIndexContainer = (props) => {
 
   const updatePlanner = (editedPlanner) => {
     fetch(`/api/v1/planners/${editedPlanner.id}`, {
-      credentials: 'same-origin',
+      credentials: "same-origin",
       method: "PATCH",
       body: JSON.stringify(editedPlanner),
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
     })
     .then(response => {
@@ -66,11 +66,11 @@ const PlannersIndexContainer = (props) => {
 
   const deletePlanner = (id) => {
     fetch(`/api/v1/planners/${id}`, {
-      credentials: 'same-origin',
+      credentials: "same-origin",
       method: "DELETE",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
     })
     .then(response => {
@@ -93,11 +93,11 @@ const PlannersIndexContainer = (props) => {
 
   const validSubmission = () => {
     let submitErrors = {}
-    const requiredFields = ['title', 'description']
+    const requiredFields = ["title", "description"]
     requiredFields.forEach((field) => {
-      if (newPlanner[field].trim() === '') {
+      if (newPlanner[field].trim() === "") {
         submitErrors = {
-          ...submitErrors, [field]: 'is blank'
+          ...submitErrors, [field]: "is blank"
         }
       }
     })
@@ -115,18 +115,18 @@ const PlannersIndexContainer = (props) => {
 
   const clearForm = (event) => {
     setNewPlanner({
-      title: '',
-      description: ''
+      title: "",
+      description: ""
     })
   };
 
   const addNewPlanner = (formPayload) => {
-    fetch('/api/v1/planners', {
-      credentials: 'same-origin',
-      method: 'POST',
+    fetch("/api/v1/planners", {
+      credentials: "same-origin",
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(formPayload)
     })

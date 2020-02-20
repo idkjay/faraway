@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import FlightTile from "./FlightTile"
 import FlightForm from "./FlightForm"
 
@@ -19,14 +19,14 @@ const FlightsIndexContainer = (props) => {
   })
 
   return(
-    <div className='faraway_app'>
+    <div className="faraway_app">
       <section>
         <div className="container-fluid">
           <div className="columns is-gapless">
             <div className="column is-one-quarter searchFormCol">
 
               <div className="level brandLevel">
-                dsafsd
+
               </div>
 
               <div className="is-flex formWrapper column">
@@ -61,8 +61,8 @@ const FlightsIndexContainer = (props) => {
 
 
 
-              <section className='section'>
-                <div className='container'>
+              <section className="section">
+                <div className="container">
                   {flightsMap}
                 </div>
               </section>

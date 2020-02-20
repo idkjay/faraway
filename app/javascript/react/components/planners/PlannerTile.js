@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 
 const PlannerTile = (props) => {
   const { id, title, description, updatePlanner, deletePlanner } = props
@@ -35,7 +35,7 @@ const PlannerTile = (props) => {
 
         <div className="card-content">
           <div className="content">
-            <p id='description'>{description}</p>
+            <p id="description">{description}</p>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ const PlannerTile = (props) => {
             <div className="modal-background"></div>
             <div className="modal-content">
               <div className="card">
-                <form className="" onSubmit={handleEditSubmit}>
+                <form className="planner_edit_form" onSubmit={handleEditSubmit}>
 
                   <header className="card-header">
                     <div className="card-header-title" id="title">
