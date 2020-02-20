@@ -4,9 +4,11 @@ import FlightForm from "./FlightForm"
 
 const FlightsIndexContainer = (props) => {
   const [ flights, setFlights ] = useState([])
+  const [ background, setBackground ] = useState(true)
 
   const searchResults = (results) => {
     setFlights(results)
+    setBackground(false)
   }
 
   const flightsMap = flights.map((flight) => {
@@ -33,15 +35,15 @@ const FlightsIndexContainer = (props) => {
 
                 <div className="clock">
                   <div id="Date"></div>
-                    <ul className="clock-ul">
-                        <li className="clock-li" id="hours"></li>
-                        <li className="clock-li" id="point">:</li>
-                        <li className="clock-li" id="min"></li>
-                        <li className="clock-li" id="point">:</li>
-                        <li className="clock-li" id="sec"></li>
-                    </ul>
-                  </div>
-                  <br/>
+                  <ul className="clock-ul">
+                      <li className="clock-li" id="hours"></li>
+                      <li className="clock-li" id="point">:</li>
+                      <li className="clock-li" id="min"></li>
+                      <li className="clock-li" id="point">:</li>
+                      <li className="clock-li" id="sec"></li>
+                  </ul>
+                </div>
+                <br/>
 
                 <div className="column flightsearch">
                   <FlightForm
@@ -51,17 +53,17 @@ const FlightsIndexContainer = (props) => {
               </div>
               <p className="creator">By Jordan Chu</p>
               <div className="devise">
-                <a href="https://www.linkedin.com/in/jordanchu1995"><i className="fab fa-linkedin fa-2x"></i></a>
-                <a href="https://github.com/idkjay"><i className="fab fa-github-square fa-2x"></i></a>
-                <a href="https://twitter.com/idkjay"><i className="fab fa-twitter-square fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/jordanchu1995"><i className="fab fa-linkedin fa-3x"></i></a>
+                <a href="https://github.com/idkjay"><i className="fab fa-github-square fa-3x"></i></a>
+                <a href="https://twitter.com/idkjay"><i className="fab fa-twitter-square fa-3x"></i></a>
               </div>
             </div>
 
             <div className="column pageLoadCol">
-
-
-
               <section className="section">
+                {background &&
+                  <img className="background" src="https://i.imgur.com/Zx9790L.jpg"></img>
+                }
                 <div className="container">
                   {flightsMap}
                 </div>

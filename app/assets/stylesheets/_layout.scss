@@ -3,10 +3,11 @@
   font-weight: bold;
   text-shadow: 1px 1px 1px #00D1B1;
   font-size: 30px;
+  margin-left: 115px;
 }
 
 .section {
-  margin-top: 40px;
+  padding: 0px;
 }
 
 .is-one-quarter {
@@ -28,7 +29,7 @@
 }
 
 .formWrapper {
-  margin-top: 50px;
+  margin-top: 100px;
   flex-direction: column;
   align-items: center;
   padding-bottom: 10px;
@@ -39,6 +40,7 @@
   display: flex;
   min-height: 300px;
   text-align: center;
+  padding: 0px;
 }
 
 nav {
@@ -57,4 +59,24 @@ nav {
   display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
 	grid-gap: 1em;
+
+}
+
+.background {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.welcome {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.signup {
+  margin-left: 33px;
+}
+
+.help {
+  font-size: 15px;
 }

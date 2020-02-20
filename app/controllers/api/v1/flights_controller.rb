@@ -16,7 +16,7 @@ class Api::V1::FlightsController < ApplicationController
     destination = Airport.where(city: to_params)
     destination_code = destination[0].code
 
-    url = "https://api.skypicker.com/flights?flyFrom=#{origin_code}&to=#{destination_code}&date_from=#{dateFrom}&date_to=#{dateTo}&price_from=1&partner=picky&limit=1&curr=USD"
+    url = "https://api.skypicker.com/flights?flyFrom=#{origin_code}&to=#{destination_code}&date_from=#{dateFrom}&date_to=#{dateTo}&price_from=1&partner=picky&limit=3&curr=USD"
     response = HTTParty.get(url)
 
     parsed_response = JSON.parse(response.body)["data"]

@@ -7,7 +7,7 @@
       <%= f.label :name, :class => 'help label' %>
     </span>
     <div class="control has-icons-left">
-      <%= f.text_field :name, autofocus: true, :class => 'input is-dark', :type => 'text', placeholder:'Dan' %>
+      <%= f.text_field :name, autofocus: true, :class => 'input is-dark is-large', :type => 'text', placeholder:'Dan' %>
       <span class="icon is-small is-left">
         <i class="fas fa-user"></i>
       </span>
@@ -19,7 +19,7 @@
       <%= f.label :email, :class => 'help label' %>
     </span>
     <div class="control has-icons-left">
-      <%= f.email_field :email, autofocus: true, :class => 'input is-dark', :type => 'text', placeholder:'dan@launch.com' %>
+      <%= f.email_field :email, autofocus: true, :class => 'input is-dark is-large', :type => 'text', placeholder:'dan@launch.com' %>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -31,7 +31,7 @@
       <%= f.label :password, :class => 'help label' %>
     </span>
     <div class="control has-icons-left">
-      <%= f.password_field :password, :class => 'input is-dark', placeholder:'Password' %>
+      <%= f.password_field :password, :class => 'input is-dark is-large', placeholder:'Password' %>
       <span class="icon is-small is-left">
         <i class="fas fa-lock"></i>
       </span>
@@ -43,7 +43,7 @@
       <%= f.label :password_confirmation, :class => 'help label' %>
     </span>
     <div class="control has-icons-left">
-      <%= f.password_field :password_confirmation, :class => 'input is-dark', placeholder:'Confirm Password' %>
+      <%= f.password_field :password_confirmation, :class => 'input is-dark is-large', placeholder:'Confirm Password' %>
       <span class="icon is-small is-left">
         <i class="fas fa-lock"></i>
       </span>
@@ -51,7 +51,7 @@
   </div>
 
   <div class="actions column">
-    <%= f.submit "Sign up", :class => 'button is-dark is-outlined' %>
+    <%= f.submit "Sign up", :class => 'button is-dark is-outlined is-large signup' %>
     <%= render "devise/shared/links" %>
   </div>
   <% end %>

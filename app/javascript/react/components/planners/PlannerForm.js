@@ -11,7 +11,7 @@ const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, e
         <div className="field column">
   				<span className="help label">Title</span>
           <div className="control has-icons-left">
-            <input onChange={handleInputChange} id="title" placeholder="Title" type="text" className="input is-dark"  value={newPlanner.title}/>
+            <input onChange={handleInputChange} id="title" placeholder="Title" type="text" className="input is-dark is-large"  value={newPlanner.title}/>
             <span className="icon is-small is-left">
               <i className="fas fa-pen"></i>
             </span>
@@ -21,7 +21,7 @@ const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, e
         <div className="field column">
   				<span className="help label">Description</span>
           <div className="control has-icons-left">
-            <textarea onChange={handleInputChange} id="description" placeholder="Description" type="text" className="input is-dark" value={newPlanner.description}/>
+            <textarea onChange={handleInputChange} id="description" placeholder="Description" type="text" className="input is-dark is-large" value={newPlanner.description}/>
             <span className="icon is-small is-left">
               <i className="fas fa-book"></i>
             </span>
@@ -29,8 +29,8 @@ const PlannerForm = ({ handleSubmit, handleInputChange, clearForm, newPlanner, e
         </div>
 
         <div className="buttons submit-clear">
-          <button className="button is-dark is-outlined" type="submit">Submit</button>
-          <button className="button is-dark is-outlined" type="button" onClick={clearForm}>Clear</button>
+          <button className="button is-dark is-outlined is-large" type="submit">Submit</button>
+          <button className="button is-dark is-outlined is-large" type="button" onClick={clearForm}>Clear</button>
         </div>
 
         <div className="flashy">

@@ -65,7 +65,7 @@ const FlightForm = (props) => {
           </label>
           <div className="control has-icons-left">
             <input
-              className="input is-dark"
+              className="input is-dark is-large"
               type="text"
               name="flyFrom"
               placeholder="City name, Ex: Boston"
@@ -83,7 +83,7 @@ const FlightForm = (props) => {
           </label>
           <div className="control has-icons-left">
             <input
-              className="input is-dark"
+              className="input is-dark is-large"
               type="text"
               name="to"
               placeholder="City name, Ex: Orlando"
@@ -101,7 +101,7 @@ const FlightForm = (props) => {
           </label>
           <div className="control has-icons-left">
             <input
-              className="input is-dark"
+              className="input is-dark is-large"
               type="date"
               name="dateFrom"
               onChange={handleInput}
@@ -118,7 +118,7 @@ const FlightForm = (props) => {
           </label>
           <div className="control has-icons-left">
             <input
-              className="input is-dark"
+              className="input is-dark is-large"
               type="date"
               name="dateTo"
               onChange={handleInput}
@@ -130,14 +130,14 @@ const FlightForm = (props) => {
         </div>
 
         <div className="search control">
-          <button type="submit" value="Search" className="search-button button is-primary">Search</button>
+          <button type="submit" value="Search" className="search-button button is-primary is-focused is-large">Search</button>
         </div>
 
       </form>
       {loading &&
         <div className="loading loading--plane" title="Loading">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.5 104">
-            <path d="M97.7 41.5c16.3 0 16.3 21-.2 21H66.7l-26 38H29.2l14.1-38h-23l-7.8 10h-9L8.2 52 3.5 31.5h9l7.8 10h23.1l-14.1-38h11.4l26 38h31z" fill="none" stroke="#231F20" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke="#000" stroke-width="4"/>
+            <path d="M97.7 41.5c16.3 0 16.3 21-.2 21H66.7l-26 38H29.2l14.1-38h-23l-7.8 10h-9L8.2 52 3.5 31.5h9l7.8 10h23.1l-14.1-38h11.4l26 38h31z" fill="none" stroke="#FFF" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="4"/>
           </svg>
         </div>
       }

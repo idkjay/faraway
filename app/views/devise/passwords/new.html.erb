@@ -7,7 +7,7 @@
       <%= f.label :email, :class => 'help label' %>
     </span>
     <div class="control has-icons-left">
-      <%= f.email_field :email, autofocus: true, :class => 'input is-dark', :type => 'text', placeholder:'Email' %>
+      <%= f.email_field :email, autofocus: true, :class => 'input is-dark is-large', :type => 'text', placeholder:'Email' %>
       <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
       </span>
@@ -15,14 +15,14 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send reset password instructions", :class => 'button is-dark is-outlined' %>
+    <%= f.submit "Send reset password instructions", :class => 'button is-dark is-outlined is-large' %>
     <%= render "devise/shared/links" %>
   </div>
   <% end %>
-</div>
+  </div>
 
-<div class="columns">
-  <div class="column flashy">
+  <div class="columns">
+    <div class="column flashy">
     <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 </div>

@@ -3,12 +3,11 @@ $(document).ready(function() {
 let months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 let days= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
-
-let newDate = new Date();
-
-newDate.setDate(newDate.getDate());
-
-$("#Date").html(days[newDate.getDay()] + ", " + months[newDate.getMonth()] + " " + newDate.getDate() + ", " + newDate.getFullYear());
+setInterval( function() {
+	let newDate = new Date();
+	newDate.setDate(newDate.getDate());
+	$("#Date").html(days[newDate.getDay()] + ", " + months[newDate.getMonth()] + " " + newDate.getDate() + ", " + newDate.getFullYear());
+});
 
 setInterval( function() {
 	let seconds = new Date().getSeconds();
