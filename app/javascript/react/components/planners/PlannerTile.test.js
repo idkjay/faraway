@@ -1,8 +1,8 @@
-import React from 'react';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import PlannerTile from './PlannerTile';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import Enzyme, { mount } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import PlannerTile from "./PlannerTile";
+import { BrowserRouter } from "react-router-dom";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("PlannerTile", () => {
@@ -14,18 +14,18 @@ describe("PlannerTile", () => {
         <PlannerTile
           key={1}
           id={1}
-          title='South Korea trip'
-          description='Going to Gangnam!'
+          title="South Korea trip"
+          description="Going to Gangnam!"
         />
       </BrowserRouter>
     )
   });
 
-  it('should render an p element containing the title', () => {
-    expect(wrapper.find('#title').first().text()).toBe('South Korea trip')
+  it("should render an p element containing the title", () => {
+    expect(wrapper.find("#title").first().text()).toBe("South Korea trip")
   });
 
-  it('should render an p element containing the description', () => {
-    expect(wrapper.find('#description').first().text()).toBe('Going to Gangnam!')
+  it("should render an p element containing the description", () => {
+    expect(wrapper.find("#description").first().text()).toBe("Going to Gangnam!")
   });
 });
