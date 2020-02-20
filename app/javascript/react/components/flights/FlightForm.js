@@ -9,7 +9,6 @@ const FlightForm = (props) => {
   })
   const [ loading, setLoading ] = useState(false)
 
-
   const handleInput = (event) => {
     let key = event.currentTarget.name
     let value = event.currentTarget.value
@@ -39,13 +38,8 @@ const FlightForm = (props) => {
       if(response.ok) {
         return response.json()
       } else {
+        props.noAvailableFlights()
         setLoading(false)
-        setSearch({
-          flyFrom: "",
-          to: "",
-          dateFrom: "",
-          dateTo: ""
-        })
         throw new Error(response.status + ": " + response.statusText);
       }
     })

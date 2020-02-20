@@ -46,6 +46,10 @@ class Api::V1::FlightsController < ApplicationController
       flights_array << flight_object
     end
 
-    render json: flights_array
+    if flights_array.length < 1
+      render json: { error: "No available flights" }, status: :unprocessable_entity
+    else
+      render json: flights_array
+    end
   end
 end

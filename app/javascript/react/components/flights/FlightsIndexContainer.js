@@ -5,10 +5,17 @@ import FlightForm from "./FlightForm"
 const FlightsIndexContainer = (props) => {
   const [ flights, setFlights ] = useState([])
   const [ background, setBackground ] = useState(true)
+  const [ noFlights, setNoFlights ] = useState("")
 
   const searchResults = (results) => {
     setFlights(results)
     setBackground(false)
+    setNoFlights("")
+  }
+
+  const noAvailableFlights = () => {
+    setNoFlights("There are no available flights.")
+    setFlights([])
   }
 
   const flightsMap = flights.map((flight) => {
@@ -48,11 +55,15 @@ const FlightsIndexContainer = (props) => {
                 <div className="column flightsearch">
                   <FlightForm
                     searchResults={searchResults}
+                    noAvailableFlights={noAvailableFlights}
                   />
                 </div>
+
+                <div className="noFlights">{noFlights}</div>
               </div>
+
               <p className="creator">By Jordan Chu</p>
-              <div className="devise">
+              <div className="devise socialIcon">
                 <a href="https://www.linkedin.com/in/jordanchu1995"><i className="fab fa-linkedin fa-3x"></i></a>
                 <a href="https://github.com/idkjay"><i className="fab fa-github-square fa-3x"></i></a>
                 <a href="https://twitter.com/idkjay"><i className="fab fa-twitter-square fa-3x"></i></a>
