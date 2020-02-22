@@ -13,6 +13,7 @@ const PlannerTile = (props) => {
   }
 
   const handleEditSubmit = (event) => {
+    debugger
     event.preventDefault()
     updatePlanner(editedPlanner)
   }
@@ -41,7 +42,7 @@ const PlannerTile = (props) => {
 
         <footer className="card-footer">
           <label className="card-footer-item far fa-edit fa-2x" htmlFor="element-toggle"></label>
-            <input id="element-toggle" type="checkbox" />
+          <input id="element-toggle" type="checkbox" />
           <div className="modal">
             <div className="modal-background"></div>
             <div className="modal-content">

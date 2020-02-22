@@ -37,6 +37,7 @@ const PlannersIndexContainer = (props) => {
   };
 
   const updatePlanner = (editedPlanner) => {
+    debugger
     fetch(`/api/v1/planners/${editedPlanner.id}`, {
       credentials: "same-origin",
       method: "PATCH",
@@ -59,6 +60,7 @@ const PlannersIndexContainer = (props) => {
       return response.json()
     })
     .then((response) => {
+      debugger
       setPlanners(response)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
@@ -174,7 +176,7 @@ const PlannersIndexContainer = (props) => {
       />
       <br/>
       <h3 className="plannertop">Your Planners</h3>
-      <hr/>
+      <br/>
       {plannerTiles}
     </div>
   )
