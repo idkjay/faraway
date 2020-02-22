@@ -3,7 +3,6 @@ import React from "react";
 const EditPlannerTile = (props) => {
   const { id, title, description, handleDelete, handleEditSubmit, handleEditInputChange, editedPlanner } = props
 
-
   return(
     <div>
       <footer className="card-footer">

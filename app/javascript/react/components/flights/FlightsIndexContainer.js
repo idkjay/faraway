@@ -58,8 +58,8 @@ const FlightsIndexContainer = (props) => {
                     noAvailableFlights={noAvailableFlights}
                   />
                 </div>
-
                 <div className="noFlights">{noFlights}</div>
+
               </div>
 
               <p className="creator">By Jordan Chu</p>
