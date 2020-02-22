@@ -75,7 +75,7 @@ const FlightsIndexContainer = (props) => {
                 {background &&
                   <img className="background" src="https://i.imgur.com/Zx9790L.jpg"></img>
                 }
-                <div className="container">
+                <div className="">
                   {flightsMap}
                 </div>
               </section>
