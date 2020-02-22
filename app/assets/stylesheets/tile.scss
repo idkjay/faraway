@@ -13,14 +13,6 @@
   margin: auto;
 }
 
-#element-toggle {
-  display: none;
-}
-
-#element-toggle:checked ~ .modal {
-  display: flex;
-}
-
 .plannertop {
   font-size: 50px;
   margin: auto;
