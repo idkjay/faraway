@@ -8,15 +8,15 @@ class Api::V1::FlightsController < ApplicationController
     dateFrom = Date.parse(params["search"]["dateFrom"]).strftime("%d/%m/%Y")
     dateTo = Date.parse(params["search"]["dateTo"]).strftime("%d/%m/%Y")
 
-    flyFrom_params = params["search"]["flyFrom"].capitalize
-    origin = Airport.where(city: flyFrom_params)
+    flyFrom_params = params["search"]["flyFrom"]
+    origin = Airport.where("country ILIKE ? OR state ILIKE ? OR city ILIKE ? OR name ILIKE ? OR code ILIKE ?", flyFrom_params, flyFrom_params, flyFrom_params, flyFrom_params, flyFrom_params)
     origin_code = origin[0].code
 
-    to_params = params["search"]["to"].capitalize
-    destination = Airport.where(city: to_params)
+    to_params = params["search"]["to"]
+    destination = Airport.where("country ILIKE ? OR state ILIKE ? OR city ILIKE ? OR name ILIKE ? OR code ILIKE ?", to_params, to_params, to_params, to_params, to_params)
     destination_code = destination[0].code
 
-    url = "https://api.skypicker.com/flights?flyFrom=#{origin_code}&to=#{destination_code}&date_from=#{dateFrom}&date_to=#{dateTo}&price_from=1&partner=picky&limit=9&curr=USD"
+    url = "https://api.skypicker.com/flights?flyFrom=#{origin_code}&to=#{destination_code}&date_from=#{dateFrom}&date_to=#{dateTo}&price_from=1&partner=picky&limit=3&curr=USD"
     response = HTTParty.get(url)
 
     parsed_response = JSON.parse(response.body)["data"]
@@ -24,8 +24,9 @@ class Api::V1::FlightsController < ApplicationController
     flights_array = []
     parsed_response.each do |flight|
 
-      destinationPicture = params["search"]["to"]
-      url = "https://api.unsplash.com/photos/random?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{flight["cityTo"]}"
+      destinationPicture = params["search"]["to"] + " travel"
+
+      url = "https://api.unsplash.com/photos/random?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{destinationPicture}"
       response_img = HTTParty.get(url)
       parsed = JSON.parse(response_img.body)
 

@@ -3,10 +3,12 @@ airport_data = JSON.parse(file)
 
 airports = []
 airport_data.each do |airport|
-  x = Airport.create(
+  new_airport = Airport.create(
+    country: airport["country"],
+    state: airport["state"],
+    city: airport["city"],
     name: airport["name"],
-    code: airport["code"],
-    city: airport["city"]
+    code: airport["code"]
   )
-  airports << x
+  airports << new_airport
 end
