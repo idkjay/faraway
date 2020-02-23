@@ -1,6 +1,6 @@
-[![Codeship Status for idkjay/faraway](https://app.codeship.com/projects/d12a94b0-2e53-0138-3455-56b7d5cdb6a3/status?branch=master)](https://app.codeship.com/projects/384824)
-
 # Faraway
+
+[![Codeship Status for idkjay/faraway](https://app.codeship.com/projects/d12a94b0-2e53-0138-3455-56b7d5cdb6a3/status?branch=master)](https://app.codeship.com/projects/384824)
 
 Travelling is fun! Paying more than you need to is not. Faraway helps users find the cheapest flights as quick as possible along with some basic information about the destination country. Users will also be able to create simple planners to help plan their next vacation. Update or delete them if needed.
 
