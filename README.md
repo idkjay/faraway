@@ -9,7 +9,7 @@ This is currently the MVP. I have many more features I would like to add down th
 Heroku Link: https://faraway.herokuapp.com/
 
 ![screenshot1](https://i.imgur.com/jvdwy9d.png)
-![screenshot2](https://i.imgur.com/eQuFVoJ.png)
+![screenshot2](https://i.imgur.com/1zo0LL0.png)
 
 ## Technologies
 
