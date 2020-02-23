@@ -4,6 +4,8 @@
 
 Travelling is fun! Paying more than you need to is not. Faraway helps users find the cheapest flights as quick as possible along with some basic information about the destination country. Users will also be able to create simple planners to help plan their next vacation. Update or delete them if needed.
 
+This is currently the MVP. I have many more features I would like to add down the road as it is a small app.
+
 Heroku Link: https://faraway.herokuapp.com/
 
 ## Technologies
@@ -12,8 +14,11 @@ Heroku Link: https://faraway.herokuapp.com/
 * Rails 5.2.3
 * React 16.8.0
 * Bulma CSS 0.8.0
+* Kiwi API
+* Unsplash API
+* Restcountries API
 
-## Getting Started
+## Setup
 
 To set up this app, download or clone this repo and run the following commands in your terminal in the exact order:
 * yarn install
@@ -26,9 +31,9 @@ To set up this app, download or clone this repo and run the following commands i
 * bundle exec rails s
 * Navigate your browser to localhost:3000
 
-## Running the tests
+## Testing
 
-There are two types of tests in this project: RSpec testing and Enzyme testing.
+There are two types of tests in this project: RSpec testing (for unit and controller testing) and Enzyme testing.
 
 To run Rspec testing, first prepare the database with:
 ```
