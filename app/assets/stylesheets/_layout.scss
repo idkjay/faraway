@@ -11,7 +11,7 @@
   letter-spacing: 70px;
   font-weight: bold;
   color: #00D1B1;
-  text-shadow: 1px 1px 3px #000;
+  text-shadow: 1px 1px 1px #000;
   font-size: 30px;
   margin-left: 115px;
 }
@@ -43,6 +43,7 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 10px;
+  position: relative;
 }
 
 .pageLoadCol {
@@ -92,6 +93,8 @@ nav {
 
 .noFlights {
   font-size: 40px;
+  text-align: center;
   color: #FFF;
-  margin-bottom: 520px;
+  position: absolute;
+  margin-top: 700px;
 }

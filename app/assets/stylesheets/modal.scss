@@ -34,8 +34,7 @@
 }
 
 .modal__inner {
-  transition: top .55s ease;
-  position: absolute;
+  transition: top .60s ease;
   top: -20%;
   right: 0;
   bottom: 0;
@@ -43,9 +42,7 @@
   width: 50%;
   margin: auto;
   overflow: auto;
-  background: #fff;
   padding: 1em 2em;
-  height: 20%;
   border-radius: 15px;
 }
 
@@ -84,7 +81,7 @@
 @media screen and (max-width: 768px) {
 
   .modal__inner {
-    width: 90%;
+    width: 100%;
     height: 90%;
     box-sizing: border-box;
   }

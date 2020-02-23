@@ -58,8 +58,8 @@ const FlightsIndexContainer = (props) => {
                     noAvailableFlights={noAvailableFlights}
                   />
                 </div>
-
                 <div className="noFlights">{noFlights}</div>
+
               </div>
 
               <p className="creator">By Jordan Chu</p>
@@ -73,7 +73,7 @@ const FlightsIndexContainer = (props) => {
             <div className="column pageLoadCol">
               <section className="section">
                 {background &&
-                  <img className="background" src="https://i.imgur.com/Zx9790L.jpg"></img>
+                  <img className="background" src="https://cdn.kapwing.com/final_5e51a3107818cb00168bd148_236835.gif"></img>
                 }
                 <div className="">
                   {flightsMap}
