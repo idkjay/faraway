@@ -2,11 +2,29 @@
 
 # Faraway
 
-One Paragraph of project description goes here
+Travelling is fun! Paying more than you need to is not. Faraway helps users find the cheapest flights as quick as possible along with some basic information about the destination country. Users will also be able to create simple planners to help plan their next vacation. Update or delete them if needed.
+
+Heroku Link: https://faraway.herokuapp.com/
+
+## Technologies
+
+* Ruby 2.6.5
+* Rails 5.2.3
+* React 16.8.0
+* Bulma CSS 0.8.0
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To set up this app, download or clone this repo and run the following commands in your terminal in the exact order:
+* yarn install
+* bundle exec bundle install
+* bundle exec rake db:create
+* bundle exec rake db:migrate && bundle exec rake db:rollback && bundle exec rake db:migrate
+* bundle exec rake db:seed
+* yarn run start
+* new tab
+* bundle exec rails s
+* Navigate your browser to localhost:3000
 
 ### Prerequisites
 
@@ -36,47 +54,25 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+There are two types of tests in this project: RSpec testing and Enzyme testing.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+To run Rspec testing, first prepare the database with:
 ```
-Give an example
+bundle exec rake db:test:prepare
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
+and then run:
 ```
-Give an example
+bundle exec rspec
 ```
 
-## Deployment
+To run Enzyme testing:
+```
+yarn run test
+```
 
-Add additional notes about how to deploy this on a live system
+## Author
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Jordan Chu** - *Initial work* - [idkjay](https://github.com/idkjay)
 
 
 ## Acknowledgments
