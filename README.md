@@ -8,6 +8,8 @@ This is currently the MVP. I have many more features I would like to add down th
 
 Heroku Link: https://faraway.herokuapp.com/
 
+![screenshot](https://i.imgur.com/jvdwy9d.png)
+
 ## Technologies
 
 * Ruby 2.6.5
