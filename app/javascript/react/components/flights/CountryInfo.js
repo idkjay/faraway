@@ -3,20 +3,25 @@ import React from 'react';
 const CountryInfo = (props) => {
 
   return(
-    <div className="box">
+    <div className="box searchResults column">
       <article className="media">
         <div className="media-left">
-          <figure className="image is-64x64">
-            <img src={props.flight.destinationCountryFlag} alt="Image"/>
+          <figure className="image is-128x128">
+            <img src={props.flight.destinationCountryFlag} alt="Image" id="flag"/>
           </figure>
         </div>
         <div className="media-content">
           <div className="content">
-            <p>
-              <strong>{props.flight.destinationCountryName}</strong>
-              <br/>
-              The main language of {props.flight.destinationCountryName} is {props.flight.destinationCountryLanguage}
-            </p>
+            <strong id="name">{props.flight.destinationCountryName}</strong>
+              <li id="capital">
+                Capital: {props.flight.destinationCountryCapital}
+              </li>
+              <li id="language">
+                Main Language: {props.flight.destinationCountryLanguage}
+              </li>
+              <li id="currency">
+                Currency: {props.flight.destinationCountryCurrency}
+              </li>
           </div>
         </div>
       </article>

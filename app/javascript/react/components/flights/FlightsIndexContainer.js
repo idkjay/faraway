@@ -19,14 +19,6 @@ const FlightsIndexContainer = (props) => {
     setFlights([])
   }
 
-  // const flightsMap = flights.map((flight) => {
-  //   return(
-  //     <FlightTile
-  //       key={flight.id}
-  //       flightData={flight}
-  //     />
-  //   )
-  // })
   const flightsMap = flights.map((flight,index) => {
     if(index===0) {
       return(
@@ -44,16 +36,6 @@ const FlightsIndexContainer = (props) => {
       )
     }
   })
-  // const countryInfo = flights.pop()
-
-  // const countryInfo = flights.map((country) => {
-  //   return(
-  //     <CountryInfo
-  //       key={country.id}
-  //       flight={flights[flights.length - 1]}
-  //     />
-  //   )
-  // })
 
   return(
     <div className="faraway_app">
@@ -90,7 +72,7 @@ const FlightsIndexContainer = (props) => {
 
               </div>
 
-              <p className="creator">By Jordan Chu</p>
+              <a href="http://jordanchu.xyz/" className="creator">By Jordan Chu</a>
               <div className="devise socialIcon">
                 <a href="https://www.linkedin.com/in/jordanchu1995"><i className="fab fa-linkedin fa-3x"></i></a>
                 <a href="https://github.com/idkjay"><i className="fab fa-github-square fa-3x"></i></a>
@@ -99,14 +81,14 @@ const FlightsIndexContainer = (props) => {
             </div>
 
             <div className="column pageLoadCol">
-              <section className="section">
-                {background &&
-                  <img className="background" src="https://cdn.kapwing.com/final_5e51a3107818cb00168bd148_236835.gif"></img>
-                }
-                <div className="searchResults">
-                  {flightsMap}
-                </div>
-              </section>
+
+              {background &&
+                <img className="background" src="https://cdn.kapwing.com/final_5e51a3107818cb00168bd148_236835.gif"></img>
+              }
+              <div className="">
+                {flightsMap}
+              </div>
+
             </div>
           </div>
         </div>

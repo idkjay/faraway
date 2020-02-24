@@ -39,9 +39,9 @@ class Api::V1::FlightsController < ApplicationController
 
     parsed_response.each do |flight|
       destinationPicture = params["search"]["to"] + " travel"
-      url2 = "https://api.unsplash.com/photos/random?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{destinationPicture}"
-      response_img = HTTParty.get(url2)
-      parsed = JSON.parse(response_img.body)
+      # url2 = "https://api.unsplash.com/photos/random?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{destinationPicture}"
+      # response_img = HTTParty.get(url2)
+      # parsed = JSON.parse(response_img.body)
 
       flight_object = {
         originCode: flight["flyFrom"],
@@ -54,7 +54,7 @@ class Api::V1::FlightsController < ApplicationController
 
         price: flight["conversion"]["USD"],
         link: flight["deep_link"],
-        img: parsed["urls"]["regular"]
+        # img: parsed["urls"]["regular"]
       }
 
       flights_array << flight_object

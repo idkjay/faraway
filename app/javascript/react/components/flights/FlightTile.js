@@ -4,8 +4,8 @@ const FlightTile = ({ flightData }) => {
   let { originCode, originCity, originCountry, destinationCode, destinationCity, destinationCountry, price, link, img } = flightData
 
   return(
-    <div>
-      <div className="card holder">
+    <div className="column">
+      <div className="card is-4 holder">
         <div className="card-image">
           <figure className="image is-4by3">
             <img src={img} id="img"/>
