@@ -16,7 +16,7 @@ Heroku Link: https://faraway.herokuapp.com/
 * Ruby 2.6.5
 * Rails 5.2.3
 * React 16.8.0
-* [Bulma CSS](https://bulma.io/) 0.8.0
+* [Bulma 0.8.0](https://bulma.io/)
 * [Kiwi API](https://docs.kiwi.com/)
 * [Unsplash API](https://unsplash.com/documentation)
 * [Restcountries API](https://restcountries.eu/)
