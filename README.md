@@ -16,6 +16,7 @@ Heroku Link: https://faraway.herokuapp.com/
 * Ruby 2.6.5
 * Rails 5.2.3
 * React 16.8.0
+* Devise
 * [Bulma 0.8.0](https://bulma.io/)
 * [Kiwi API](https://docs.kiwi.com/)
 * [Unsplash API](https://unsplash.com/documentation)
@@ -24,15 +25,15 @@ Heroku Link: https://faraway.herokuapp.com/
 ## Setup
 
 To set up this app, download or clone this repo and run the following commands in your terminal in the exact order:
-* yarn install
-* bundle exec bundle install
-* bundle exec rake db:create
-* bundle exec rake db:migrate && bundle exec rake db:rollback && bundle exec rake db:migrate
-* bundle exec rake db:seed
-* yarn run start
-* new tab
-* bundle exec rails s
-* Navigate your browser to localhost:3000
+* ```yarn install```
+* ```bundle exec bundle install```
+* ```bundle exec rake db:create```
+* ```bundle exec rake db:migrate && bundle exec rake db:rollback && bundle exec rake db:migrate```
+* ```bundle exec rake db:seed```
+* ```yarn run start```
+* ```new tab```
+* ```bundle exec rails s```
+* ```navigate your browser to localhost:3000```
 
 ## Testing
 
@@ -54,12 +55,6 @@ yarn run test
 
 ## Author
 
-* **Jordan Chu** - *Initial work* - [idkjay](https://github.com/idkjay)
-
-
-## Acknowledgments
-
-* Thanks to Launch Academy
-
+* **Jordan Chu** - [idkjay](https://github.com/idkjay)
 
 
