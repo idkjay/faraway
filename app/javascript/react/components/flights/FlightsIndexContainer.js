@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlightTile from "./FlightTile"
+import CountryInfo from "./CountryInfo"
 import FlightForm from "./FlightForm"
 
 const FlightsIndexContainer = (props) => {
@@ -18,14 +19,41 @@ const FlightsIndexContainer = (props) => {
     setFlights([])
   }
 
-  const flightsMap = flights.map((flight) => {
-    return(
-      <FlightTile
-        key={flight.id}
-        flightData={flight}
-      />
-    )
+  // const flightsMap = flights.map((flight) => {
+  //   return(
+  //     <FlightTile
+  //       key={flight.id}
+  //       flightData={flight}
+  //     />
+  //   )
+  // })
+  const flightsMap = flights.map((flight,index) => {
+    if(index===0) {
+      return(
+        <CountryInfo
+          key={flight.id}
+          flight={flight}
+          />
+      )
+    } else {
+      return(
+        <FlightTile
+          key={flight.id}
+          flightData={flight}
+          />
+      )
+    }
   })
+  // const countryInfo = flights.pop()
+
+  // const countryInfo = flights.map((country) => {
+  //   return(
+  //     <CountryInfo
+  //       key={country.id}
+  //       flight={flights[flights.length - 1]}
+  //     />
+  //   )
+  // })
 
   return(
     <div className="faraway_app">
@@ -75,7 +103,7 @@ const FlightsIndexContainer = (props) => {
                 {background &&
                   <img className="background" src="https://cdn.kapwing.com/final_5e51a3107818cb00168bd148_236835.gif"></img>
                 }
-                <div className="">
+                <div className="searchResults">
                   {flightsMap}
                 </div>
               </section>
