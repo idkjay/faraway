@@ -14,13 +14,13 @@ const CountryInfo = (props) => {
           <div className="content">
             <strong id="name">{props.flight.destinationCountryName}</strong>
               <li id="capital">
-                Capital: {props.flight.destinationCountryCapital}
+                <strong>Capital:</strong> {props.flight.destinationCountryCapital}
               </li>
               <li id="language">
-                Main Language: {props.flight.destinationCountryLanguage}
+                <strong>Main Language:</strong> {props.flight.destinationCountryLanguage}
               </li>
               <li id="currency">
-                Currency: {props.flight.destinationCountryCurrency}
+                <strong>Currency:</strong> {props.flight.destinationCountryCurrency}
               </li>
           </div>
         </div>

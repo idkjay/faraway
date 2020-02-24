@@ -28,7 +28,7 @@ const PlannerTile = (props) => {
 
   return(
     <div>
-      <div className="card">
+      <div className="card plannertile">
         <header className="card-header is-large">
           <p className="card-header-title" id="title">
             {title}

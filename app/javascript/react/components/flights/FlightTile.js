@@ -9,7 +9,7 @@ const FlightTile = ({ flightData }) => {
         <div className="card-image">
           <figure className="image is-4by3">
             <img src={img} id="img"/>
-            <span className="source"> Photo by <a href={source}>{name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></span>
+            <span className="source"><a href={source}>{name}</a> on <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral">Unsplash</a></span>
           </figure>
         </div>
         <div className="card-content">
