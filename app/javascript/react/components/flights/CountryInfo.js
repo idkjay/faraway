@@ -5,12 +5,12 @@ const CountryInfo = (props) => {
   return(
     <div className="box searchResults column">
       <article className="media">
-        <div className="media-left">
+        <div className="media-left has-text-centered">
           <figure className="image is-128x128">
             <img src={props.flight.destinationCountryFlag} alt="Image" id="flag"/>
           </figure>
         </div>
-        <div className="media-content">
+        <div className="media-content info">
           <div className="content">
             <strong id="name">{props.flight.destinationCountryName}</strong>
               <li id="capital">

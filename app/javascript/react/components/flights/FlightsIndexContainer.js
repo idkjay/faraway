@@ -81,14 +81,14 @@ const FlightsIndexContainer = (props) => {
             </div>
 
             <div className="column pageLoadCol">
-
-              {background &&
-                <img className="background" src="https://cdn.kapwing.com/final_5e51a3107818cb00168bd148_236835.gif"></img>
-              }
-              <div className="">
-                {flightsMap}
-              </div>
-
+              <section className="section">
+                {background &&
+                  <img className="background" src="https://cdn.kapwing.com/final_5e51a3107818cb00168bd148_236835.gif"></img>
+                }
+                <div className="">
+                  {flightsMap}
+                </div>
+              </section>
             </div>
           </div>
         </div>
