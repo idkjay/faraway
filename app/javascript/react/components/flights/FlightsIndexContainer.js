@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlightTile from "./FlightTile"
+import CountryInfo from "./CountryInfo"
 import FlightForm from "./FlightForm"
 
 const FlightsIndexContainer = (props) => {
@@ -18,13 +19,22 @@ const FlightsIndexContainer = (props) => {
     setFlights([])
   }
 
-  const flightsMap = flights.map((flight) => {
-    return(
-      <FlightTile
-        key={flight.id}
-        flightData={flight}
-      />
-    )
+  const flightsMap = flights.map((flight,index) => {
+    if(index===0) {
+      return(
+        <CountryInfo
+          key={flight.id}
+          flight={flight}
+          />
+      )
+    } else {
+      return(
+        <FlightTile
+          key={flight.id}
+          flightData={flight}
+          />
+      )
+    }
   })
 
   return(
@@ -62,7 +72,7 @@ const FlightsIndexContainer = (props) => {
 
               </div>
 
-              <p className="creator">By Jordan Chu</p>
+              <a href="http://jordanchu.xyz/" className="creator">By Jordan Chu</a>
               <div className="devise socialIcon">
                 <a href="https://www.linkedin.com/in/jordanchu1995"><i className="fab fa-linkedin fa-3x"></i></a>
                 <a href="https://github.com/idkjay"><i className="fab fa-github-square fa-3x"></i></a>
