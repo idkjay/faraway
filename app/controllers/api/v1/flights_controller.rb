@@ -28,22 +28,22 @@ class Api::V1::FlightsController < ApplicationController
     parsed_country = JSON.parse(response_country.body)
 
     country_object = {
-      destinationCountryName: parsed_country["name"],
-      destinationCountryCapital: parsed_country["capital"],
-      destinationCountryFlag: parsed_country["flag"],
-      destinationCountryCurrency: parsed_country["currencies"][0]["name"],
-      destinationCountryLanguage: parsed_country["languages"][0]["name"]
+        destinationCountryName: parsed_country["name"],
+        destinationCountryCapital: parsed_country["capital"],
+        destinationCountryFlag: parsed_country["flag"],
+        destinationCountryCurrency: parsed_country["currencies"][0]["name"],
+        destinationCountryLanguage: parsed_country["languages"][0]["name"]
     }
 
     flights_array << country_object
 
     parsed_response.each do |flight|
-      destinationPicture = params["search"]["to"] + " travel"
-      url2 = "https://api.unsplash.com/photos/random?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{destinationPicture}"
-      response_img = HTTParty.get(url2)
-      parsed = JSON.parse(response_img.body)
+        destinationPicture = params["search"]["to"] + " travel"
+        url2 = "https://api.unsplash.com/photos/random?client_id=#{ENV["UNSPLASH_KEY"]}&per_page=1&query=#{destinationPicture}"
+        response_img = HTTParty.get(url2)
+        parsed = JSON.parse(response_img.body)
 
-      flight_object = {
+        flight_object = {
         originCode: flight["flyFrom"],
         originCity: flight["cityFrom"],
         originCountry: flight["countryFrom"]["code"],
@@ -57,15 +57,15 @@ class Api::V1::FlightsController < ApplicationController
         img: parsed["urls"]["regular"],
         source: parsed["user"]["links"]["html"] + "?utm_source=your_app_name&utm_medium=referral",
         name: parsed["user"]["name"]
-      }
+        }
 
-      flights_array << flight_object
+        flights_array << flight_object
     end
 
     if flights_array.length < 1
-      render json: { error: "No available flights" }, status: :unprocessable_entity
+        render json: { error: "No available flights" }, status: :unprocessable_entity
     else
-      render json: flights_array
+        render json: flights_array
     end
   end
 end

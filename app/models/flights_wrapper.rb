@@ -1,5 +1,4 @@
-class Flights_Wrapper
-    def initialize
-        
+class FlightsWrapper
+    def initialize 
     end
 end
