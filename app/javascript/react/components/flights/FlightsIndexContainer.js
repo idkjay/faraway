@@ -48,7 +48,7 @@ const FlightsIndexContainer = (props) => {
 
               </div>
 
-              <div className="is-flex formWrapper column">
+
 
                 <div className="clock">
                   <div id="Date"></div>
@@ -70,7 +70,7 @@ const FlightsIndexContainer = (props) => {
                 </div>
                 <div className="noFlights">{noFlights}</div>
 
-              </div>
+
 
               <a href="http://jordanchu.xyz/" className="creator">By Jordan Chu</a>
               <div className="devise socialIcon">
