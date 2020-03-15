@@ -45,10 +45,7 @@ const FlightsIndexContainer = (props) => {
             <div className="column is-one-quarter searchFormCol">
 
               <div className="level brandLevel">
-
               </div>
-
-
 
                 <div className="clock">
                   <div id="Date"></div>
@@ -69,8 +66,6 @@ const FlightsIndexContainer = (props) => {
                   />
                 </div>
                 <div className="noFlights">{noFlights}</div>
-
-
 
               <a href="http://jordanchu.xyz/" className="creator">By Jordan Chu</a>
               <div className="devise socialIcon">
