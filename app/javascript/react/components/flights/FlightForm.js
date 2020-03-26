@@ -126,9 +126,10 @@ const FlightForm = (props) => {
         <div className="search control">
           <button type="submit" value="Search" className="search-button button is-primary is-focused is-large">Search</button>
         </div>
-
       </form>
+      
       <br/>
+
       {loading &&
         <div className="loading loading--plane" title="Loading">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.5 104">
