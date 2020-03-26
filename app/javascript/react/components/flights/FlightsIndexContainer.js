@@ -44,9 +44,6 @@ const FlightsIndexContainer = (props) => {
           <div className="columns is-gapless">
             <div className="column is-one-quarter searchFormCol">
 
-              <div className="level brandLevel">
-              </div>
-
                 <div className="clock">
                   <div id="Date"></div>
                   <ul className="clock-ul">

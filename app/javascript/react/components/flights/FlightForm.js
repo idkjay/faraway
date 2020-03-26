@@ -57,6 +57,7 @@ const FlightForm = (props) => {
           <label className="help label" htmlFor="flyFrom">
             Location
           </label>
+          
           <div className="control has-icons-left">
             <input
               className="input is-dark is-large"
@@ -127,7 +128,7 @@ const FlightForm = (props) => {
           <button type="submit" value="Search" className="search-button button is-primary is-focused is-large">Search</button>
         </div>
       </form>
-      
+
       <br/>
 
       {loading &&
