@@ -4,7 +4,7 @@
 
 Travelling is fun! Paying more than you need to is not. Faraway helps users find the cheapest flights as quick as possible along with some basic information about the destination country. Users will also be able to create simple planners to help plan their next vacation. Update or delete them if needed.
 
-Heroku Link: https://faraway.herokuapp.com/
+Live site: https://faraway.herokuapp.com/
 
 ![screenshot1](https://i.imgur.com/jvdwy9d.png)
 ![screenshot2](https://i.imgur.com/1zo0LL0.png)
