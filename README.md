@@ -4,8 +4,6 @@
 
 Travelling is fun! Paying more than you need to is not. Faraway helps users find the cheapest flights as quick as possible along with some basic information about the destination country. Users will also be able to create simple planners to help plan their next vacation. Update or delete them if needed.
 
-This is currently the MVP. I have many more features I would like to add down the road as it is a small app.
-
 Heroku Link: https://faraway.herokuapp.com/
 
 ![screenshot1](https://i.imgur.com/jvdwy9d.png)
