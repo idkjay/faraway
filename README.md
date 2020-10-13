@@ -1,10 +1,10 @@
 # Faraway
 
-[![Codeship Status for idkjay/faraway](https://app.codeship.com/projects/d12a94b0-2e53-0138-3455-56b7d5cdb6a3/status?branch=master)](https://app.codeship.com/projects/384824)
+[![Codeship Status for idkjay/faraway](https://app.codeship.com/projects/2cccf0a0-ee3a-0138-dedd-1a088a1a4525/status?branch=master)](https://app.codeship.com/projects/413439)
 
 Travelling is fun! Paying more than you need to is not. Faraway helps users find the cheapest flights as quick as possible along with some basic information about the destination country. Users will also be able to create simple planners to help plan their next vacation. Update or delete them if needed.
 
-Live site: https://faraway.herokuapp.com/
+Live site: https://faraway.herokuapp.com/ (currently not paying extra dynos on Heroku so it might take some time to load the site up, I apologize for that)
 
 ![screenshot1](https://i.imgur.com/jvdwy9d.png)
 ![screenshot2](https://i.imgur.com/1zo0LL0.png)
