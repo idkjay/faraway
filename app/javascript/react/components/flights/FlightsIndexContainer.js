@@ -64,7 +64,7 @@ const FlightsIndexContainer = (props) => {
                 </div>
                 <div className="noFlights">{noFlights}</div>
 
-              <a href="https://jordanchu.chu/" className="creator">By Jordan Chu</a>
+              <a href="https://jordanchu.com/" className="creator">By Jordan Chu</a>
               <div className="devise socialIcon">
                 <a href="https://www.linkedin.com/in/jordanchu1995"><i className="fab fa-linkedin fa-3x"></i></a>
                 <a href="https://github.com/idkjay"><i className="fab fa-github-square fa-3x"></i></a>
